@@ -1,0 +1,19 @@
+[toolchain]
+anchor_version = "0.29.0"
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+oft = "Sq26ebVgXuFQCgjaT2z9dpfn7JxAMf3EAWczkQmKv4e"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Devnet"
+wallet = "/home/maga/secure_keys/HunbdJ6xje2aF3mYHdjiZEpu5zbK6vCQDoJLogQATAtY.json"
+
+[scripts]
+test = "yarn run ts-mocha -b -p ./tsconfig.json -t 1000000 tests/**/*.test.ts"
