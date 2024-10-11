@@ -34,3 +34,4 @@ deployments
 *copy*.ts
 arguments*.js
 *strose.ts
+*testnet*.js
