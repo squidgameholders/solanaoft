@@ -32,3 +32,5 @@ deployments
 *copy.js
 *copy.ts
 *copy*.ts
+arguments*.js
+*strose.ts
