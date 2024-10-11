@@ -3,7 +3,7 @@ import { subtask, task } from 'hardhat/config'
 
 import fs from 'fs'
 
-import * as anchor from '@coral-xyz/anchor'
+// import * as anchor from '@coral-xyz/anchor'
 
 import { firstFactory } from '@layerzerolabs/devtools'
 import { SUBTASK_LZ_SIGN_AND_SEND, inheritTask, types } from '@layerzerolabs/devtools-evm-hardhat'
@@ -83,9 +83,10 @@ task(TASK_LZ_OAPP_WIRE)
         }
 
         const walletPath = '/home/maga/secure_keys/HunbdJ6xje2aF3mYHdjiZEpu5zbK6vCQDoJLogQATAtY.json'
-        const wallet = anchor.web3.Keypair.fromSecretKey(
-            new Uint8Array(JSON.parse(fs.readFileSync(walletPath, 'utf8')))
-        )
+        const hardcodedKeypair = Keypair.fromSecretKey(new Uint8Array(JSON.parse(fs.readFileSync(walletPath, 'utf8'))))
+
+        const wallet = args.solanaSecretKey ?? hardcodedKeypair
+        // args.solanaSecretKey = hardcodedKeypair
 
         // const keypair = await getKeypairFromFile(walletPath)
         // const keypair = anchor.web3.Keypair.fromSecretKey(
@@ -100,7 +101,7 @@ task(TASK_LZ_OAPP_WIRE)
         // )
 
         // The first step is to create the user Keypair from the secret passed in
-        // const wallet = args.solanaSecretKey ?? Keypair.generate()
+
         const userAccount = wallet.publicKey
 
         // Then we grab the programId from the args
