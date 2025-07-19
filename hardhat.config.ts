@@ -58,58 +58,49 @@ const config: HardhatUserConfig = {
         ],
     },
     networks: {
-        solanadevnet: {
-            eid: EndpointId.SOLANA_V2_TESTNET,
+        solanamainnet: {
+            eid: EndpointId.SOLANA_V2_MAINNET,
             // url: `https://rpc.sepolia.linea.build/`,
-            url: `https://api.devnet.solana.com`,
-            chainId: 103,
+            url: `https://api.mainnet-beta.solana.com`,
+            chainId: 101,
             accounts,
             // accounts: [process.env.TESTNET_PRIVATE_KEY],
         },
-        // solanamainnet: {
-        //     eid: EndpointId.SOLANA_V2_MAINNET,
-        //     // url: `https://rpc.sepolia.linea.build/`,
-        //     url: `https://api.mainnet-beta.solana.com`,
-        //     chainId: 101,
-        //     accounts,
-        //     // accounts: [process.env.TESTNET_PRIVATE_KEY],
-        // },
-        linea_sepolia: {
-            eid: EndpointId.LINEASEP_V2_TESTNET,
-            url: `https://linea-sepolia.infura.io/v3/${INFURA_API_KEY}`,
-            chainId: 59141,
+
+        'base-mainnet': {
+            eid: EndpointId.BASE_V2_MAINNET,
+            url: 'https://mainnet.base.org',
+            chainId: 8453,
+            // accounts: [process.env.WALLET_KEY as string],
+            accounts,
+            // verify: {
+            //     etherscan: {
+            //         apiUrl: 'https://api-sepolia.basescan.org',
+            //         apiKey: process.env.ETHERSCAN_API_KEY,
+            //     },
+            // },
+        },
+        bsc: {
+            eid: EndpointId.BSC_V2_MAINNET,
+            url: 'https://bsc-dataseed.binance.org/',
+            chainId: 56,
+            accounts,
+            // verify: {
+            //     etherscan: {
+            //         apiUrl: 'https://api-testnet.bscscan.com',
+            //         apiKey: 'PP2XZC913DGW8PS2A1VHXA3ISC8K43FJFB',
+            //     },
+            // },
+        },
+        linea_mainnet: {
+            eid: EndpointId.ZKCONSENSYS_V2_MAINNET,
+            url: `https://linea-mainnet.infura.io/v3/${INFURA_API_KEY}`,
+            chainId: 59144,
             accounts,
             verify: {
                 etherscan: {
-                    apiUrl: 'https://api-sepolia.lineascan.build',
+                    apiUrl: 'https://api.lineascan.build/',
                     apiKey: LINEASCAN_API_KEY,
-                },
-            },
-        },
-        'base-sepolia': {
-            eid: EndpointId.BASESEP_V2_TESTNET,
-            url: 'https://sepolia.base.org',
-            chainId: 84532,
-            accounts,
-            verify: {
-                etherscan: {
-                    apiUrl: 'https://api-sepolia.basescan.org',
-                    apiKey: process.env.ETHERSCAN_API_KEY,
-                },
-            },
-        },
-        bscTestnet: {
-            eid: EndpointId.BSC_V2_TESTNET,
-            url: 'https://data-seed-prebsc-1-s1.bnbchain.org:8545',
-            // url: 'https://chain-proxy.wallet.coinbase.com?targetName=bsc-testnet',
-            // url: 'https://bsc-testnet-dataseed.bnbchain.org',
-            chainId: 97,
-            // accounts: [process.env.TESTNET_PRIVATE_KEY],
-            accounts,
-            verify: {
-                etherscan: {
-                    apiUrl: 'https://api-testnet.bscscan.com',
-                    apiKey: 'PP2XZC913DGW8PS2A1VHXA3ISC8K43FJFB',
                 },
             },
         },

@@ -6,14 +6,14 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-oft = "Sq26ebVgXuFQCgjaT2z9dpfn7JxAMf3EAWczkQmKv4e"
+oft = "SquidjXLN8SX6wkLqK2miXGGciCGUrVqEtasjiZ2UWc"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Devnet"
-wallet = "/home/maga/secure_keys/HunbdJ6xje2aF3mYHdjiZEpu5zbK6vCQDoJLogQATAtY.json"
+cluster = "mainnet"
+wallet = "/home/maga/secure_keys/Gihun3g2XijWDVGn42SbR8hwyYpWr9FaJhWHth5wcAUc.json"
 
 [scripts]
 test = "yarn run ts-mocha -b -p ./tsconfig.json -t 1000000 tests/**/*.test.ts"
